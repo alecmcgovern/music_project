@@ -12,13 +12,24 @@
 
 }
 #login{
+	width: 70%;
+	left: 15%;
 	position: absolute;
-	width: 40%;
 	height: 300px;
-	left: 30%;
 	top: 25%;
 	background: rgba(239, 239, 239, 0.6);
 	border-radius: 4px;
+}
+@media (min-width: 600px){
+	#login{
+		position: absolute;
+		width: 40%;
+		height: 300px;
+		left: 30%;
+		top: 25%;
+		background: rgba(239, 239, 239, 0.6);
+		border-radius: 4px;
+	}
 }
 #email{
 	position: relative;
