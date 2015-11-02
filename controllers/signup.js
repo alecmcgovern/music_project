@@ -4,7 +4,7 @@ var db = require("../models");
 
 
 router.get('/', function(req, res){
-	res.render('signup');
+	res.render('signup', {extractStyles: true});
 });
 
 router.post('/', function(req, res){
@@ -19,14 +19,17 @@ router.post('/', function(req, res){
 			}
 		}).spread(function(user, created){
 			if(created){
-				res.send('login successful');
+				req.flash("success", "Thanks for signing up!");
+				res.redirect("/profile");
 			}else{
-				res.send('email must already be in use');
+				req.flash("danger", "Email already in use");
+				res.redirect("/signup");
 			}
 		});
 	}else{
-		var error1 = "passwords didn't match";
-		res.render("signup", {error: error1})
+		console.log("passwords didn't match");
+		req.flash('danger', "Passwords did not match.  Please try again");
+		res.redirect("/signup");
 	}
 });
 

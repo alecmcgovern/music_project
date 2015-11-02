@@ -1,3 +1,74 @@
-#signup{
-	
+#signup-body{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #2C3F4E;
+}
+#signupdiv{
+	width: 70%;
+	left: 15%;
+	position: absolute;
+	height: 400px;
+	top: 18%;
+	background: rgba(239, 239, 239, 0.6);
+	border-radius: 4px;
+}
+@media (min-width: 600px){
+	#signupdiv{
+		position: absolute;
+		width: 40%;
+		height: 400px;
+		left: 30%;
+		top: 18%;
+		background: rgba(239, 239, 239, 0.6);
+		border-radius: 4px;
+	}
+}
+#email-signup{
+	position: relative;
+	width: 70%;
+	left: 15%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+#username-signup{
+	position: relative;
+	width: 70%;
+	left: 15%;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+#password1-signup{
+	position: relative;
+	width: 70%;
+	left: 15%;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+#password2-signup{
+	position: relative;
+	width: 70%;
+	left: 15%;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+#submit-signup{
+	color: white;
+	background:#2C3F4E;
+	position: relative;
+	left: 30%;
+	width: 40%;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	border-radius: 4px;
 }
