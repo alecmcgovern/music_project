@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
-var session = require('express-session');
+//var session = require('express-sessions');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(__dirname + '/static'));

@@ -12,8 +12,8 @@ var db = require('./models');
 
 // });
 
-db.user.findById(1).then(function(user){
-	user.destroy().then(function(){
+// db.user.findById(1).then(function(user){
+// 	user.destroy().then(function(){
 
-	});
-});
+// 	});
+// });

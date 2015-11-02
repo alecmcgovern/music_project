@@ -26,7 +26,7 @@ router.post('/', function(req, res){
 		});
 	}else{
 		var error1 = "passwords didn't match";
-		res.redirect("/signup", )
+		res.render("signup", {error: error1})
 	}
 });
 

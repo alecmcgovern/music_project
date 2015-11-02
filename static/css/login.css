@@ -1,3 +1,58 @@
-#header{
-	color: blue;
+#login-body{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #2C3F4E;
+}
+
+#soundwave{
+	position: absolute;
+	width: 80%;
+	opacity: 0.4;
+
+}
+#login{
+	position: absolute;
+	width: 40%;
+	height: 300px;
+	left: 30%;
+	top: 25%;
+	background: rgba(239, 239, 239, 0.6);
+	border-radius: 4px;
+}
+#email{
+	position: relative;
+	width: 70%;
+	left: 15%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+#password{
+	position: relative;
+	width: 70%;
+	left: 15%;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+#submit{
+	color: white;
+	background:#2C3F4E;
+	position: relative;
+	left: 30%;
+	width: 40%;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	margin-top: 20px;
+	border-radius: 4px;
+}
+
+#signup{
+	position: relative;
+	text-align: center;
+	padding-top: 10px;
 }
