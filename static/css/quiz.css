@@ -18,4 +18,8 @@ label{
 	height: 300px;
 	left: 25%;
 	background: #2C3F4E;
+	color: white;
+}
+ul{
+	list-style-type: none;
 }

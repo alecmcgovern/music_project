@@ -1,23 +1,96 @@
 <link rel="stylesheet" type="text/css" href="/css/quiz.css">
+
 <h1>identify the song snippet as fast as possible</h1>
 <h2>choose a genre</h2>
 
-<form>
-	<label for="pop">Pop
-		<input id="pop" type="radio" name="genre" value="Pop">
-	</label>
-	<label for="electronic">Electronic
-		<input id="electronic" type="radio" name="genre" value="Electronic">
-	</label>
-	<label for="daftpunk">Daft Punk
-		<input id="daftpunk" type="radio" name="genre" value="daftpunk">
-	</label>
+<form method="POST">
+	<select name="selector">
+		<option value="pop">Pop</option>
+		<option value="electronic">Electronic</option>
+		<option value="daft punk">Daft Punk</option>
+	</select>
 	<input type="submit" value="Start">
 </form>
 
+<% if(randomSong){ %>
 <div id="quizdiv">
-<% data.results.forEach(function(item){ %>
-	<h4><%= item.trackName %></h4>
-<% }); %>
-	
+	<h4><%= randomSong.trackName %></h4>
+	<audio src="<%=  randomSong.previewUrl %>" controls>
+		</audio>
+	<div>
+		<ul>
+			<% var r=Math.ceil(Math.random()*4) %>
+			<% if (r===1){ %>
+				<li><a href="/quiz/<%=genre%>">
+					<%= randomSong.trackName %> - 
+					<%= randomSong.artistName %>
+					</a></li>
+				<li><a href="/quiz/<%=genre%>">
+					<%= filler.one.trackName %> - 
+					<%= filler.one.artistName %>
+					</a></li>
+				<li><a href="/quiz/<%=genre%>">
+					<%= filler.two.trackName %> - 
+					<%= filler.two.artistName %>
+					</a></li>
+				<li><a href="/quiz/<%=genre%>">
+					<%= filler.three.trackName %> - 
+					<%= filler.three.artistName %>
+					</a></li>
+			<% } else if (r===2) { %>
+				<li><a href="/quiz/<%=genre%>">
+					<%= filler.one.trackName %> - 
+					<%= filler.one.artistName %>
+					</a></li>
+				<li><a href="/quiz/<%=genre%>">
+					<%= randomSong.trackName %> - 
+					<%= randomSong.artistName %>
+					</a></li>
+				<li><a href="/quiz/<%=genre%>">
+					<%= filler.two.trackName %> - 
+					<%= filler.two.artistName %>
+					</a></li>
+				<li><a href="/quiz/<%=genre%>">
+					<%= filler.three.trackName %> - 
+					<%= filler.three.artistName %>
+					</a></li>
+			<% } else if (r===3) { %>
+				<li><a href="/quiz/<%=genre%>">
+					<%= filler.one.trackName %> - 
+					<%= filler.one.artistName %>
+					</a></li>
+				<li><a href="/quiz/<%=genre%>">
+					<%= filler.two.trackName %> - 
+					<%= filler.two.artistName %>
+					</a></li>
+				<li><a href="/quiz/<%=genre%>">
+					<%= randomSong.trackName %> - 
+					<%= randomSong.artistName %>
+					</a></li>
+				<li><a href="/quiz/<%=genre%>">
+					<%= filler.three.trackName %> - 
+					<%= filler.three.artistName %>
+					</a></li>
+			<% } else if (r===4) { %>
+				<li><a href="/quiz/<%=genre%>">
+					<%= filler.one.trackName %> - 
+					<%= filler.one.artistName %>
+					</a></li>
+				<li><a href="/quiz/<%=genre%>">
+					<%= filler.two.trackName %> - 
+					<%= filler.two.artistName %>
+					</a></li>
+				<li><a href="/quiz/<%=genre%>">
+					<%= filler.three.trackName %> - 
+					<%= filler.three.artistName %>
+					</a></li>
+				<li><a href="/quiz/<%=genre%>">
+					<%= randomSong.trackName %> - 
+					<%= randomSong.artistName %>
+					</a></li>
+			<%}%>
+		</ul>
+	</div>
 </div>
+<% } %>
+<script type="text/javascript" src="jscript/quiz.js"></script>
