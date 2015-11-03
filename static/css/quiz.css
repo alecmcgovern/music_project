@@ -45,5 +45,9 @@ ul{
 	text-align: center;
 }
 #favorite{
-	
+	color: white;
+	padding-right: 20px;
+}
+#favorite:hover{
+	color: red;
 }
