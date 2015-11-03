@@ -1,0 +1,16 @@
+.navbar{
+	background: #2C3F4E;
+	padding-top: 100px;
+}
+#title{
+	color: white;
+}
+#leaderboard{
+	color: white;
+}
+#username{
+	color: white;
+}
+#logout{
+	color: white;
+}

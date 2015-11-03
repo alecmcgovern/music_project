@@ -4,7 +4,7 @@ var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var flash = require('connect-flash');
-
+var db = require("./models");
 
 app.use(flash());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -30,6 +30,8 @@ app.use(function(req, res, next){
 	}
 });
 
+app.set("layout extractScripts", true);
+
 app.use(function(req, res, next){
   res.locals.currentUser = req.currentUser;
   res.locals.alerts = req.flash();
@@ -41,6 +43,7 @@ app.get("/", function(req, res){
 });
 
 
+app.use("/quiz", require("./controllers/quiz"));
 app.use("/signup", require("./controllers/signup"));
 app.use("/logout", require("./controllers/logout"));
 app.use("/login", require("./controllers/login"));

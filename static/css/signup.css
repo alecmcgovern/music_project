@@ -4,6 +4,12 @@
 	height: 100%;
 	background: #2C3F4E;
 }
+#soundwave{
+	position: absolute;
+	width: 80%;
+	opacity: 0.4;
+
+}
 #signupdiv{
 	width: 70%;
 	left: 15%;
@@ -71,4 +77,10 @@
 	padding-left: 10px;
 	padding-bottom: 10px;
 	border-radius: 4px;
+}
+#backtologin{
+	position: relative;
+	text-align: center;
+	padding-top: 10px;
+	margin-top: 10px;
 }

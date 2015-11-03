@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="/css/profile.css">
 <nav class="navbar navbar-default" role="navigation">
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
@@ -7,14 +8,13 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="#">Title</a>
+		<a id="title" class="navbar-brand" href="#">Title</a>
 	</div>
 
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
-			<li class="active"><a href="#">Link</a></li>
-			<li><a href="#">Link</a></li>
+			<li><a id="leaderboard" href="#">Leaderboard</a></li>
 		</ul>
 		<form class="navbar-form navbar-left" role="search">
 			<div class="form-group">
@@ -23,8 +23,12 @@
 			<button type="submit" class="btn btn-default">Submit</button>
 		</form>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/logout">Logout</a></li>
+			<% if (currentUser) { %>
+			<li><a id="username" href="profile/<%= username %>"><%= username %></a></li>
+			<% } %>
+			<li><a id="logout" href="/logout">Logout</a></li>
 		</ul>
 	</div><!-- /.navbar-collapse -->
 </nav>
-<h1>sample profile</h1>
+<h1><%= username %></h1>
+<a href="/quiz"><button>Music!</button></a>
