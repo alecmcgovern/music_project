@@ -17,9 +17,33 @@ label{
 	width: 50%;
 	height: 300px;
 	left: 25%;
+	margin-top: 20px;
 	background: #2C3F4E;
 	color: white;
 }
 ul{
+	margin-top: 20px;
 	list-style-type: none;
+	padding-left: 0px;
+}
+#list{
+	position: relative;
+	text-align: center;
+	width: 70%;
+	left: 15%;
+}
+#timer{
+	text-align: center;
+	margin-top: 10px;
+}
+#audio{
+	position: relative;
+	width: 50%;
+	left: 25%;
+}
+#cheat{
+	text-align: center;
+}
+#favorite{
+	
 }

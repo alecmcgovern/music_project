@@ -17,6 +17,8 @@ app.use(session({
 	saveUninitialized: true
 }));
 
+app.set("layout extractScripts", true);
+
 app.use(function(req, res, next){
 	if (req.session.user) {
 		db.user.findById(req.session.user)
@@ -30,7 +32,6 @@ app.use(function(req, res, next){
 	}
 });
 
-app.set("layout extractScripts", true);
 
 app.use(function(req, res, next){
   res.locals.currentUser = req.currentUser;

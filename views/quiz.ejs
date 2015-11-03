@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/css/quiz.css">
 
-<h1>identify the song snippet as fast as possible</h1>
+<h1>Identify the song as fast as possible</h1>
 <h2>choose a genre</h2>
 
 <form method="POST">
@@ -14,10 +14,13 @@
 
 <% if(randomSong){ %>
 <div id="quizdiv">
-	<h4><%= randomSong.trackName %></h4>
-	<audio src="<%=  randomSong.previewUrl %>" controls>
+	<div id="timer">Time Remaining: <code id="time"></code></div>
+	<h4 id="cheat"><%= randomSong.trackName %></h4>
+	<audio id="audio" src="<%= randomSong.previewUrl %>" controls>
 		</audio>
-	<div>
+		<a id="favorite" href="#" class="pull-right">
+			<i class="fa fa-heart-o"></i></a>
+	<div id="list">
 		<ul>
 			<% var r=Math.ceil(Math.random()*4) %>
 			<% if (r===1){ %>
@@ -93,4 +96,4 @@
 	</div>
 </div>
 <% } %>
-<script type="text/javascript" src="jscript/quiz.js"></script>
+<script type="text/javascript" src="/jscript/quiz.js"></script>
