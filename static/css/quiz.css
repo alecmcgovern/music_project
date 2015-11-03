@@ -1,0 +1,21 @@
+h1{
+	color: #2C3F4E;
+	text-align: center;
+}
+h2{
+	text-align: center;
+}
+form{
+	text-align: center;
+}
+label{
+	margin-left: 20px;
+	margin-right: 5px;
+}
+#quizdiv{
+	position: absolute;
+	width: 50%;
+	height: 300px;
+	left: 25%;
+	background: #2C3F4E;
+}

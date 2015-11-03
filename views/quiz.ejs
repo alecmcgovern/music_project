@@ -1,3 +1,23 @@
+<link rel="stylesheet" type="text/css" href="/css/quiz.css">
 <h1>identify the song snippet as fast as possible</h1>
+<h2>choose a genre</h2>
 
-<script type="text/javascript" src="/jscript/quiz.js"></script>
+<form>
+	<label for="pop">Pop
+		<input id="pop" type="radio" name="genre" value="Pop">
+	</label>
+	<label for="electronic">Electronic
+		<input id="electronic" type="radio" name="genre" value="Electronic">
+	</label>
+	<label for="daftpunk">Daft Punk
+		<input id="daftpunk" type="radio" name="genre" value="daftpunk">
+	</label>
+	<input type="submit" value="Start">
+</form>
+
+<div id="quizdiv">
+<% data.results.forEach(function(item){ %>
+	<h4><%= item.trackName %></h4>
+<% }); %>
+	
+</div>
