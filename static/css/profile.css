@@ -14,9 +14,27 @@
 #logout{
 	color: white;
 }
+#un{
+	margin-left: 20px;
+}
+#music{
+	margin-left: 20px;
+}
 #favorites{
+	position: absolute;
+	left: 25%;
 	width: 30%;
+	height: 400px;
+	border: 1px solid black;
 }
 #stats{
-
+	position: absolute;
+	left: 60%;
+	width: 30%;
+	height: 400px;
+	border: 1px solid black;
+}
+h4{
+	text-align: center;
+	text-decoration: underline;
 }

@@ -24,13 +24,17 @@
 		</form>
 		<ul class="nav navbar-nav navbar-right">
 			<% if (currentUser) { %>
-			<li><a id="username" href="profile/<%= username %>"><%= username %></a></li>
+			<li><a id="username" href="/profile/<%= currentUser.username %>"><%= currentUser.username %></a></li>
 			<% } %>
 			<li><a id="logout" href="/logout">Logout</a></li>
 		</ul>
 	</div><!-- /.navbar-collapse -->
 </nav>
-<h1><%= username %></h1>
-<a href="/quiz"><button>Music!</button></a>
-<div id="favorites"></div>
-<div id="stats"></div>
+<h1 id="un"><%= username %></h1>
+<a id="music" href="/quiz"><button>Music!</button></a>
+<div id="favorites">
+	<h4>Favorites</h4>
+</div>
+<div id="stats">
+	<h4>Stats</h4>
+</div>

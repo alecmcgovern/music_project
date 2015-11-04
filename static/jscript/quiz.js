@@ -8,11 +8,36 @@ $('document').ready(function(){
 		timeLeft -= 1;
 		$('#time').text(timeLeft);
 		if(timeLeft<1){
-			alert("Too slow!")
+			// alert("Too slow!")
 			clearInterval(timer);
 		}
 	}, 1000);
 
+
+	function win(){
+		$('#answer').text("Correct!");
+	}
+	function lose(){
+		$('#answer').text("Incorrect!");
+	}
+
+	$('#a1').on('click', win);
+	$('#a2').on('click', lose);
+	$('#a3').on('click', lose);
+	$('#a4').on('click', lose);
+	$('#b1').on('click', lose);
+	$('#b2').on('click', win);
+	$('#b3').on('click', lose);
+	$('#b4').on('click', lose);
+	$('#c1').on('click', lose);
+	$('#c2').on('click', lose);
+	$('#c3').on('click', win);
+	$('#c4').on('click', lose);
+	$('#d1').on('click', lose);
+	$('#d2').on('click', lose);
+	$('#d3').on('click', lose);
+	$('#d4').on('click', win);
+	
 
 
 });
