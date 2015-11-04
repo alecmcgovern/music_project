@@ -20,15 +20,25 @@ router.get('/', function(req, res){
 router.post('/result', function(req, res){
 	console.log(req.body.answer);
 	db.user.findById(req.currentUser.id).then(function(user){
-		if(req.body.answer){
-
+		if(!user.song_count){
+			user.song_count = 1;
 		}else{
-			
+			user.song_count++;
 		}
-		// user.total_ids++;
-		// user.save().then(function(){
-		// 	res.send("done");
-		// })
+
+		user.save().then(function(){
+		 	if(req.body.answer){
+				if(!user.total_ids){
+					user.total_ids = 1;
+				}else{
+					user.total_ids++;
+				}
+			}
+			user.save().then(function(){
+		 		res.send("done");
+			});
+		});
+		
 	})
 });
 

@@ -18,7 +18,8 @@ module.exports = function(sequelize, DataTypes) {
     password: DataTypes.TEXT,
     accuracy: DataTypes.INTEGER,
     average_time: DataTypes.INTEGER,
-    total_ids: DataTypes.INTEGER
+    total_ids: DataTypes.INTEGER,
+    song_count: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
