@@ -36,6 +36,7 @@ router.get('/:genre', function(req, res){
 						songinfo.previewUrl = song.previewUrl;
 						songinfo.artistName = song.artistName;
 						songinfo.trackId = song.trackId;
+						songinfo.trackViewUrl = song.trackViewUrl;
 						songArray.push(songinfo);
 					});
 					var random = songArray[Math.floor(Math.random()*songArray.length)];
