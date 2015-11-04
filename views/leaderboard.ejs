@@ -8,7 +8,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a id="title" class="navbar-brand" href="#">Title</a>
+		<a id="title" class="navbar-brand" href="/about">About</a>
 	</div>
 
 	<!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,3 +31,10 @@
 	</div><!-- /.navbar-collapse -->
 </nav>
 <h1>Leaderboard</h1>
+<div id="resultslist">
+	<% users.forEach(function(user) {%>
+		<h5><%= user.username %>   
+		Accuracy: <code>
+		<%= Math.round((user.total_ids/user.song_count)*100)%>%</code></h5>
+	<% }); %>
+</div>

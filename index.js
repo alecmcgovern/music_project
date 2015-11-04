@@ -43,7 +43,7 @@ app.get("/", function(req, res){
 	res.redirect("/login");
 });
 
-
+app.use("/about", require("./controllers/about"));
 app.use("/leaderboard", require("./controllers/leaderboard"));
 app.use("/quiz", require("./controllers/quiz"));
 app.use("/signup", require("./controllers/signup"));

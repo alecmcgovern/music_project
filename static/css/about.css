@@ -17,10 +17,3 @@
 h1{
 	text-align: center;
 }
-#resultslist{
-	position: absolute;
-	left: 30%;
-	width: 40%;
-	height: 600px;
-	border: 1px solid black;
-}

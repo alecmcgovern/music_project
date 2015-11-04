@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="/css/profile.css">
+<link rel="stylesheet" type="text/css" href="/css/about.css">
 <nav class="navbar navbar-default" role="navigation">
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
@@ -30,18 +30,4 @@
 		</ul>
 	</div><!-- /.navbar-collapse -->
 </nav>
-
-
-<h1 id="un"><%= user.username %></h1>
-<a id="music" href="/quiz"><button>Take the Quiz!</button></a>
-
-<div id="favorites">
-	<h4>Favorites</h4>
-</div>
-
-<div id="stats">
-	<h4>Stats</h4>
-	<h5>Correct Ids: <code><%= user.total_ids %></code></h5>
-	<h5>Total Games Played: <code><%= user.song_count %></code></h5>
-	<h5>Accuracy: <code><%= Math.round((user.total_ids/user.song_count)*100) %>%</code></h5>
-</div>
+<h1>Created by Alec McGovern</h1>
