@@ -26,11 +26,18 @@ ul{
 	list-style-type: none;
 	padding-left: 0px;
 }
+li{
+	margin-bottom: 10px;
+}
+li:hover{
+	margin-bottom: 8px;
+	border: 1px solid white;
+}
 #list{
 	position: relative;
 	text-align: center;
-	width: 70%;
-	left: 15%;
+	width: 80%;
+	left: 10%;
 }
 #timer{
 	text-align: center;

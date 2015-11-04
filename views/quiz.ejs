@@ -14,34 +14,65 @@
 
 <% if(randomSong){ %>
 <div id="quizdiv">
+<script>var randomSongId = <%= randomSong.trackId %>;
+	$("#cheat").append(randomSongId);
+	function right(){
+		$('#answer').text("Correct!");
+		// setTimeout(function(){
+
+		// }, 2000);
+	}
+	function wrong(){
+		$('#answer').text("Incorrect");
+	}
+</script>
 	<div id="timer">Time Remaining: <code id="time"></code></div>
 	<h4 id="cheat"><%= randomSong.trackName %></h4>
 	<audio id="audio" src="<%= randomSong.previewUrl %>" controls>
 		</audio>
-		<a id="favorite" href="#" class="pull-right">
-			<i class="fa fa-heart-o"></i></a>
+		<i id="favorite" class="fa fa-heart-o pull-right"></i>
 	<div id="list">
 		<ul>
-			<% var r=Math.ceil(Math.random()*4) %>
+			<% var r= 1/*Math.ceil(Math.random()*4)*/ %>
 			<% if (r===1){ %>
-				<li><a href="/quiz/<%=genre%>">
+				<li id="a1">
+					<script>$('#a1').on('click', 
+						function(){
+							$('#answer').text("Correct!");
+						});
+					</script>
 					<%= randomSong.trackName %> - 
 					<%= randomSong.artistName %>
 					</a></li>
-				<li><a href="/quiz/<%=genre%>">
+				<li id="a2">
+					<script>$('#a2').on('click', 
+						function(){
+							$('#answer').text("Incorrect!");
+						});
+					</script>
 					<%= filler.one.trackName %> - 
 					<%= filler.one.artistName %>
 					</a></li>
-				<li><a href="/quiz/<%=genre%>">
+				<li id="a3">
+					<script>$('#a3').on('click', 
+						function(){
+							$('#answer').text("Incorrect!");
+						});
+					</script>
 					<%= filler.two.trackName %> - 
 					<%= filler.two.artistName %>
 					</a></li>
-				<li><a href="/quiz/<%=genre%>">
+				<li id="a4">
+					<script>$('#a4').on('click', 
+						function(){
+							$('#answer').text("Incorrect!");
+						});
+					</script>
 					<%= filler.three.trackName %> - 
 					<%= filler.three.artistName %>
 					</a></li>
 			<% } else if (r===2) { %>
-				<li><a href="/quiz/<%=genre%>">
+				<li><a href="/quiz/<%=genre%>" data-songid="<%= filler.one.trackId %>">
 					<%= filler.one.trackName %> - 
 					<%= filler.one.artistName %>
 					</a></li>
@@ -93,6 +124,7 @@
 					</a></li>
 			<%}%>
 		</ul>
+		<p id="answer"></p>
 	</div>
 </div>
 <% } %>

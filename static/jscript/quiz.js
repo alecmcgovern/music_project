@@ -1,5 +1,6 @@
+
+
 $('document').ready(function(){
-	console.log("scripttttt");
 	var timeLeft = 30;
 	$('#time').text(timeLeft);
 
@@ -11,5 +12,7 @@ $('document').ready(function(){
 			clearInterval(timer);
 		}
 	}, 1000);
+
+
 
 });
