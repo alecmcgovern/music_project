@@ -16,9 +16,11 @@ $('document').ready(function(){
 
 	function win(){
 		$('#answer').text("Correct!");
+		$('#answer').css({color: "green"});2
 	}
 	function lose(){
 		$('#answer').text("Incorrect!");
+		$('#answer').css({color: "red"});
 	}
 
 	$('#a1').on('click', win);

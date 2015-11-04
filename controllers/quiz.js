@@ -26,7 +26,7 @@ router.get('/:genre', function(req, res){
 		var genre = req.params.genre;
 		var songArray = [];
 		request(
-			"https://itunes.apple.com/search?term="+genre,
+			"https://itunes.apple.com/search?term="+genre+"&entity=song",
 			function(err, response, body) {
 				if(!err && response.statusCode === 200){
 					var data = JSON.parse(body);
@@ -39,11 +39,22 @@ router.get('/:genre', function(req, res){
 						songinfo.trackViewUrl = song.trackViewUrl;
 						songArray.push(songinfo);
 					});
-					var random = songArray[Math.floor(Math.random()*songArray.length)];
+
+					//Fisher-Yates Shuffle -- source: http://bost.ocks.org/mike/shuffle/
+					var m = songArray.length, t, i;
+					while(m) {
+						i = Math.floor(Math.random()* m--);
+
+						t = songArray[m];
+						songArray[m] = songArray[i];
+						songArray[i] = t;
+					}
+
+					var random = songArray[0];
 					var filler = {
-						one: songArray[Math.floor(Math.random()*songArray.length)],
-						two: songArray[Math.floor(Math.random()*songArray.length)],
-						three: songArray[Math.floor(Math.random()*songArray.length)]
+						one: songArray[1],
+						two: songArray[2],
+						three: songArray[3]
 					};
 					res.render('quiz', {
 						extractStyles: true, 

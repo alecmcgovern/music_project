@@ -15,7 +15,7 @@ label{
 #quizdiv{
 	position: absolute;
 	width: 50%;
-	height: 300px;
+	height: 350px;
 	left: 25%;
 	margin-top: 20px;
 	background: #2C3F4E;
@@ -57,4 +57,11 @@ li:hover{
 }
 #favorite:hover{
 	color: red;
+}
+h5{
+	width: 50%;
+	left: 25%;
+	position: absolute;
+	top: 90%;
+	text-align: center;
 }
