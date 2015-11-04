@@ -18,7 +18,6 @@ router.get('/', function(req, res){
 });
 
 router.post('/result', function(req, res){
-	console.log(req.body.answer);
 	db.user.findById(req.currentUser.id).then(function(user){
 		if(!user.song_count){
 			user.song_count = 1;
@@ -27,7 +26,8 @@ router.post('/result', function(req, res){
 		}
 
 		user.save().then(function(){
-		 	if(req.body.answer){
+			console.log(req.body.answer+" dat");
+		 	if(req.body.answer==="true"){
 				if(!user.total_ids){
 					user.total_ids = 1;
 				}else{
@@ -39,7 +39,7 @@ router.post('/result', function(req, res){
 			});
 		});
 		
-	})
+	});
 });
 
 router.post('/', function(req, res){

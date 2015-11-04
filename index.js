@@ -44,6 +44,7 @@ app.get("/", function(req, res){
 });
 
 
+app.use("/leaderboard", require("./controllers/leaderboard"));
 app.use("/quiz", require("./controllers/quiz"));
 app.use("/signup", require("./controllers/signup"));
 app.use("/logout", require("./controllers/logout"));

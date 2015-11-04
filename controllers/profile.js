@@ -9,8 +9,14 @@ router.get('/:username', function(req, res){
 				username: req.params.username
 			}
 		}).then(function(user){
+			var userinfo = {
+				username: user.username,
+				accuracy: user.accuracy,
+				total_ids: user.total_ids,
+				song_count: user.song_count
+			}
 			if(user){
-				res.render("profile", {username:req.params.username});
+				res.render("profile", {user: userinfo});
 			}else{
 				res.render('erruser');
 			}

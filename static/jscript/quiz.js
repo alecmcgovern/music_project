@@ -13,7 +13,6 @@ $('document').ready(function(){
 		}
 	}, 1000);
 
-
 	function win(){
 		$('#answer').text("Correct!");
 		$('#answer').css({color: "green"});
@@ -25,12 +24,22 @@ $('document').ready(function(){
 				time: timeLeft
 			}
 		}).done(function(){
-			console.log("ajax completed");
+
 		});
 	}
 	function lose(){
 		$('#answer').text("Incorrect!");
 		$('#answer').css({color: "red"});
+		$.ajax({
+			method: 'POST',
+			url: '/quiz/result',
+			data: {
+				answer: false,
+				time: timeLeft
+			}
+		}).done(function(){
+
+		});
 	}
 
 	$('#a1').on('click', win);
