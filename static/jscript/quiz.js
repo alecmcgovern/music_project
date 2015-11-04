@@ -16,7 +16,17 @@ $('document').ready(function(){
 
 	function win(){
 		$('#answer').text("Correct!");
-		$('#answer').css({color: "green"});2
+		$('#answer').css({color: "green"});
+		$.ajax({
+			method: 'POST',
+			url: '/quiz/result',
+			data: {
+				answer: true,
+				time: timeLeft
+			}
+		}).done(function(){
+			console.log("ajax completed");
+		});
 	}
 	function lose(){
 		$('#answer').text("Incorrect!");

@@ -17,6 +17,21 @@ router.get('/', function(req, res){
 	}
 });
 
+router.post('/result', function(req, res){
+	console.log(req.body.answer);
+	db.user.findById(req.currentUser.id).then(function(user){
+		if(req.body.answer){
+
+		}else{
+			
+		}
+		// user.total_ids++;
+		// user.save().then(function(){
+		// 	res.send("done");
+		// })
+	})
+});
+
 router.post('/', function(req, res){
 	res.redirect('/quiz/'+req.body.selector);
 });
