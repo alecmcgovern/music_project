@@ -41,7 +41,17 @@
 		<div class="divfavorite">
 			<h5><%= fav.song_name %> - <%= fav.artist_name %></h5>
 			<audio src="<%= fav.preview_link%>" controls></audio>
-			<i class="fa fa-heart pull-right redfav fa-2x"></i>
+			<% if(currentUser.username===user.username) { %>
+				<form class="pull-right fav-form">
+					<span class="fa fa-heart pull-right redfav fa-2x" data-id="<%= fav.id %>"></span>
+				</form>
+			<% } else { %>
+					<span class="fa fa-heart-o pull-right otherfav fa-2x" data-song="<%= fav.song_name %>"
+					data-artist="<%= fav.artist_name %>"
+					data-preview="<%= fav.preview_link %>"
+					data-itunes="<%= fav.itunes_link %>" 
+					data-userId="<%= fav.userId %>"</span>
+			<% } %>
 		</div>
 	<% }); %>
 </div>

@@ -33,4 +33,38 @@ router.get('/:username', function(req, res){
 	}
 });
 
+router.post('/nofav', function(req, res){
+	db.favorite.findById(req.body.id).then(function(fav){
+		fav.destroy().then(function(f){
+			res.send("deleted");
+		});
+	})
+});
+
+
+router.post('/fav', function(req, res){
+	db.favorite.findOrCreate({
+		where: {
+			song_name: req.body.song,
+			userId: req.currentUser.id
+		},
+		defaults:{
+			userId: req.currentUser.id,
+			song_name: req.body.song,
+			artist_name: req.body.artist,
+			preview_link: req.body.preview,
+			itunes_link: req.body.itunes
+		}
+	}).spread(function(song, created){
+		res.send("added");
+	});
+});
+
+
+
+
+
+
+
+
 module.exports = router;

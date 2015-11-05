@@ -53,3 +53,7 @@ h4{
 .redfav:hover{
 	color: grey;
 }
+.otherfav{
+	color: red;
+	margin-right: 10px;
+}

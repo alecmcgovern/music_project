@@ -45,7 +45,8 @@ router.post('/result', function(req, res){
 router.post('/fav', function(req, res){
 	db.favorite.find({
 		where: {
-			song_name: req.body.song
+			song_name: req.body.song,
+			userId: req.currentUser.id
 		}
 	}).then(function(song){
 		if(song){
