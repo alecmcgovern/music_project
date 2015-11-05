@@ -104,7 +104,7 @@ h5{
 	margin-top: 13px;
 	border-bottom: 1px solid black;
 }
-button{
+.butn{
 	position: relative;
 	background: #2C3F4E;
 	border-bottom: 4px solid black;
@@ -112,7 +112,7 @@ button{
 	border-left: none;
 	border-right: none;
 }
-button:hover{
+.butn:hover{
 	border-bottom: 1px solid black;
 	margin-top: 13px;
 }

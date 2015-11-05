@@ -26,7 +26,6 @@ router.post('/result', function(req, res){
 		}
 
 		user.save().then(function(){
-			console.log(req.body.answer+" dat");
 		 	if(req.body.answer==="true"){
 				if(!user.total_ids){
 					user.total_ids = 1;
@@ -35,7 +34,10 @@ router.post('/result', function(req, res){
 				}
 			}
 			user.save().then(function(){
-		 		res.send("done");
+				user.accuracy = Math.round((user.total_ids/user.song_count)*100);
+				user.save().then(function(){
+		 			res.send("done");
+				});
 			});
 		});
 		

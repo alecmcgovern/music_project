@@ -1,8 +1,11 @@
 .navbar{
 	background: #2C3F4E;
-	margin-bottom: 0px;
 	border: 2px solid black;
 	border-radius: 0px;
+	margin-bottom: 0px;
+}
+#about{
+	color: white;
 }
 #leaderboard{
 	color: white;
@@ -13,6 +16,16 @@
 #logout{
 	color: white;
 }
+#content{
+	width: 100%;
+	height: 800px;
+	background: #ced7e5;
+}
+h1{
+	padding-top: 30px;
+	margin-top: 0px;
+	text-align: center;
+}
 img{
 	margin: 0px;
 	padding: 0px;
@@ -21,24 +34,25 @@ img{
 	width: 50%;
 	left: 25%;
 }
+#quizlink{
+	text-align: center;
+	color: white;
+}
 #quizheader{
 	margin: 0px;
 	padding: 0px;
 	text-align: center;
 }
-#quizlink{
-	color: white;
-}
 #quizlink:hover{
 	text-decoration: none;
 }
 
+
 #content{
 	width: 100%;
-	height: 800px;
+	height: 1600px;
 	background: #ced7e5;
 }
-	
 #un{
 	margin-top: 0px;
 	padding-top: 30px;
@@ -64,12 +78,51 @@ img{
 }
 #favorites{
 	position: absolute;
-	left: 12%;
-	width: 36%;
+	left: 15%;
+	width: 70%;
 	height: 500px;
 	border: 3px solid black;
 	background: #2C3F4E;
 }
+#stats{
+	position: relative;
+	top: 600px;
+	left: 15%;
+	width: 70%;
+	height: 500px;
+	border: 3px solid black;
+	background: #2C3F4E;
+}
+@media(min-width: 800px){
+	#content{
+		width: 100%;
+		height: 800px;
+		background: #ced7e5;
+	}
+}
+@media(min-width: 800px){
+	#favorites{
+		position: absolute;
+		left: 12%;
+		width: 36%;
+		height: 500px;
+		border: 3px solid black;
+		background: #2C3F4E;
+	}
+}
+
+@media(min-width: 800px){
+	#stats{
+		position: relative;
+		top: 0px;
+		left: 52%;
+		width: 36%;
+		height: 500px;
+		border: 3px solid black;
+		background: #2C3F4E;
+	}
+}
+
 #labelstat{
 	position: relative;
 	width: 100%;
@@ -77,14 +130,7 @@ img{
 	border-bottom: 4px solid black;
 	background: #C7254E;
 }
-#stats{
-	position: absolute;
-	left: 52%;
-	width: 36%;
-	height: 500px;
-	border: 3px solid black;
-	background: #2C3F4E;
-}
+
 .stat{
 	margin-left: 10px;
 }
@@ -120,11 +166,12 @@ h4{
 audio{
 	position: relative;
 	left: 10%;
+	width: 70%;
 }
-button{
+.butn{
 	margin-top: 10px;
 	position: relative;
-	width: 50%;
+	width: 200px;
 	left: 10%;
 	background: #2C3F4E;
 	border-bottom: 4px solid black;
@@ -132,7 +179,7 @@ button{
 	border-left: none;
 	border-right: none;
 }
-button:hover{
+.butn:hover{
 	border-bottom: 1px solid black;
 	margin-top: 13px;
 }

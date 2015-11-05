@@ -1,8 +1,8 @@
 <link rel="stylesheet" type="text/css" href="/css/profile.css">
 <nav class="navbar navbar-default" role="navigation">
-	<!-- Brand and toggle get grouped for better mobile display -->
 	<a href="/quiz"><img src="/images/soundwave.png"></a>
 	<h1 id="quizheader"><a id="quizlink" href="/quiz"><i class="fa fa-music"></i> Quiz Me <i class="fa fa-music"></i></a></h1>
+	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 			<span class="sr-only">Toggle navigation</span>
@@ -15,10 +15,9 @@
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
-			<li><a id="leaderboard" href="/about">About</a></li>
+			<li><a id="about" href="/about">About</a></li>
 			<li><a id="leaderboard" href="/leaderboard">Leaderboard</a></li>
 		</ul>
-
 		<ul class="nav navbar-nav navbar-right">
 			<% if (currentUser) { %>
 			<li><a id="username" href="/profile/<%= currentUser.username %>"><%= currentUser.username %></a></li>
@@ -54,7 +53,7 @@
 						data-itunes="<%= fav.itunes_link %>" 
 						data-userId="<%= fav.userId %>"></span>
 				<% } %>
-				<a class="buttonlink" href="<%= fav.itunes_link %>"><button>Download via iTunes</button></a>
+				<a class="buttonlink" href="<%= fav.itunes_link %>"><button class="butn">Download via iTunes</button></a>
 			</div>
 		<% }); %>
 		</div>
@@ -68,7 +67,7 @@
 		<div class="statwell">
 			<h5 class="stat">Correct Ids: <code><%= user.total_ids %></code></h5>
 			<h5 class="stat">Total Games Played: <code><%= user.song_count %></code></h5>
-			<h5 class="stat">Accuracy: <code><%= Math.round((user.total_ids/user.song_count)*100) %>%</code></h5>
+			<h5 class="stat">Accuracy: <code><%= user.accuracy %>%</code></h5>
 		</div>
 	</div>
 </div>

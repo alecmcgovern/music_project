@@ -4,7 +4,8 @@ var db = require("../models");
 
 router.get('/', function(req, res){
 	if(req.currentUser){
-		db.user.findAll().then(function(users){
+		db.user.findAll({order: [['accuracy', 'DESC']]})
+		.then(function(users){
 			res.render('leaderboard', {users: users});
 		})
 	}else{

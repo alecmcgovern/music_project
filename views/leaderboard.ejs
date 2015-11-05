@@ -15,7 +15,7 @@
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
-			<li><a id="leaderboard" href="/about">About</a></li>
+			<li><a id="about" href="/about">About</a></li>
 			<li><a id="leaderboard" href="/leaderboard">Leaderboard</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
@@ -30,10 +30,32 @@
 <div id="content">
 	<h1>Leaderboard</h1>
 	<div id="resultslist">
-		<% users.forEach(function(user) {%>
-			<h5><a href="/profile/<%= user.username%>"><%= user.username %>  </a> 
-			Accuracy: <code>
-			<%= Math.round((user.total_ids/user.song_count)*100)%>%</code></h5>
-		<% }); %>
+		<table class="table">
+    		<thead>
+      			<tr>
+      				<th>Rank</th>
+        			<th>Username</th>
+        			<th>Accuracy</th>
+       				<th>Total Ids</th>
+      			</tr>
+    		</thead>
+    		<tbody>
+    			<% users.forEach(function(user, count) {%>
+	    			<tr>
+	    				<td><%= count+1 %></td>
+	    				<td><a href="/profile/<%= user.username%>">		<%= user.username %></a>
+	    				</td>
+	    				<td>
+	    					<code><%= user.accuracy %>%		
+	    					</code>
+	    				</td>
+	    				<td>
+	    					<code><%= user.total_ids%></code>
+	    				</td>
+	    			</tr>
+    			<% });%>
+    		</tbody>
+    	</table>
+
 	</div>
 </div>
