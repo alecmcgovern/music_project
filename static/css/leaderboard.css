@@ -1,6 +1,5 @@
 .navbar{
 	background: #2C3F4E;
-	padding-top: 100px;
 }
 #title{
 	color: white;
@@ -23,4 +22,19 @@ h1{
 	width: 40%;
 	height: 600px;
 	border: 1px solid black;
+}
+img{
+	height: 100px;
+	position: relative;
+	width: 50%;
+	left: 25%;
+}
+#quizheader{
+	text-align: center;
+}
+#quizlink{
+	color: white;
+}
+#quizlink:hover{
+	text-decoration: none;
 }

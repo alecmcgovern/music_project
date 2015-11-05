@@ -1,5 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/css/leaderboard.css">
 <nav class="navbar navbar-default" role="navigation">
+	<a href="/quiz"><img src="/images/soundwave.png"></a>
+	<h1 id="quizheader"><a id="quizlink" href="/quiz"><i class="fa fa-music"></i> Quiz Me <i class="fa fa-music"></i></a></h1>
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -8,20 +10,14 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a id="title" class="navbar-brand" href="/about">About</a>
 	</div>
 
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
+			<li><a id="leaderboard" href="/about">About</a></li>
 			<li><a id="leaderboard" href="/leaderboard">Leaderboard</a></li>
 		</ul>
-		<form class="navbar-form navbar-left" role="search">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Search">
-			</div>
-			<button type="submit" class="btn btn-default">Submit</button>
-		</form>
 		<ul class="nav navbar-nav navbar-right">
 			<% if (currentUser) { %>
 			<li><a id="username" href="/profile/<%= currentUser.username %>"><%= currentUser.username %></a></li>

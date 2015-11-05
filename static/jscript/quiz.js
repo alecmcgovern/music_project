@@ -8,13 +8,14 @@ $('document').ready(function(){
 		timeLeft -= 1;
 		$('#time').text(timeLeft);
 		if(timeLeft<1){
-			// alert("Too slow!")
+			lose();
 			clearInterval(timer);
 		}
 	}, 1000);
 
 	//function called when the correct song is chosen
 	function win(){
+		clearInterval(timer);
 		$('#answer').text("Correct!");
 		$('#answer').css({color: "green"});
 		$.ajax({
@@ -25,12 +26,15 @@ $('document').ready(function(){
 				time: timeLeft
 			}
 		}).done(function(){
-
+			setTimeout(function(){
+				location.reload();
+			}, 1000);
 		});
 	}
 
 	//function for incorrect answer
 	function lose(){
+		clearInterval(timer);
 		$('#answer').text("Incorrect!");
 		$('#answer').css({color: "red"});
 		$.ajax({
@@ -41,7 +45,9 @@ $('document').ready(function(){
 				time: timeLeft
 			}
 		}).done(function(){
-
+			setTimeout(function(){
+				location.reload();
+			}, 1000);
 		});
 	}
 

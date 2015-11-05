@@ -1,3 +1,6 @@
+body{
+	background: #93c5d8;
+}
 h1{
 	color: #2C3F4E;
 	text-align: center;
@@ -68,4 +71,26 @@ h5{
 	position: absolute;
 	top: 600px;
 	text-align: center;
+}
+button{
+	margin-top: 10px;
+	position: relative;
+	width: 20%;
+	left: 5%;
+	background: #2C3F4E;
+	border-bottom: 4px solid black;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+button:hover{
+	border-bottom: 1px solid black;
+	margin-top: 13px;
+}
+.buttonlink{
+	color: white;
+}
+.buttonlink:hover{
+	color: white;
+	text-decoration: none;
 }

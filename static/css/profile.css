@@ -1,6 +1,5 @@
 .navbar{
 	background: #2C3F4E;
-	padding-top: 100px;
 }
 #title{
 	color: white;
@@ -14,8 +13,24 @@
 #logout{
 	color: white;
 }
+img{
+	height: 100px;
+	position: relative;
+	width: 50%;
+	left: 25%;
+}
+#quizheader{
+	text-align: center;
+}
+#quizlink{
+	color: white;
+}
+#quizlink:hover{
+	text-decoration: none;
+}
+	
 #un{
-	margin-left: 20px;
+	text-align: center;
 }
 #music{
 	margin-left: 20px;
@@ -23,28 +38,73 @@
 #favorites{
 	overflow: auto;
 	position: absolute;
-	left: 25%;
-	width: 30%;
+	left: 12%;
+	width: 36%;
 	height: 400px;
 	border: 1px solid black;
+	background: #2C3F4E;
 }
 #stats{
 	position: absolute;
-	left: 60%;
-	width: 30%;
+	left: 52%;
+	width: 36%;
 	height: 400px;
 	border: 1px solid black;
+	background: #2C3F4E;
+}
+.stat{
+	margin-left: 10px;
+}
+.statwell{
+	border: 1px solid black;
+	background: #93c5d8;
+	position: relative;
+	width: 94%;
+	left: 3%;
+	height: 350px;
 }
 h4{
 	text-align: center;
 	text-decoration: underline;
+	color: white;
 }
 .divfavorite{
 	position: relative;
 	width: 94%;
 	left: 3%;
-	height: 100px;
+	height: 120px;
 	border: 1px solid grey;
+	margin-bottom: 10px;
+	background: #93c5d8;
+}
+.title{
+	text-align: center;
+}
+audio{
+	position: relative;
+	left: 10%;
+}
+button{
+	margin-top: 10px;
+	position: relative;
+	width: 50%;
+	left: 10%;
+	background: #2C3F4E;
+	border-bottom: 4px solid black;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+button:hover{
+	border-bottom: 1px solid black;
+	margin-top: 13px;
+}
+.buttonlink{
+	color: white;
+}
+.buttonlink:hover{
+	text-decoration: none;
+	color: white; 
 }
 .redfav{
 	color: red;
@@ -57,3 +117,4 @@ h4{
 	color: red;
 	margin-right: 10px;
 }
+
