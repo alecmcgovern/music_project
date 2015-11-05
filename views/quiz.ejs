@@ -18,9 +18,13 @@
 
 	<div id="timer">Time Remaining: <code id="time"></code></div>
 	<h4 id="cheat"><%= randomSong.trackName %></h4>
+	<h4 id="cheatartist" hidden><%= randomSong.artistName %></h4>
+	<h4 id="cheatpreview" hidden><%= randomSong.previewUrl %></h4>
+	<h4 id="cheatitunes" hidden><%= randomSong.trackViewUrl %></h4>
 	<audio id="audio" src="<%= randomSong.previewUrl %>" controls>
 		</audio>
 		<i id="favorite" class="fa fa-heart-o pull-right fa-3x"></i>
+		<i id="redfav" class="fa fa-heart pull-right fa-3x" hidden></i>
 	<div id="list">
 		<ul>
 			<% var r= Math.ceil(Math.random()*4) %>

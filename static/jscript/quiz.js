@@ -1,9 +1,9 @@
-
-
 $('document').ready(function(){
+
+
+	//Tracks the time
 	var timeLeft = 30;
 	$('#time').text(timeLeft);
-
 	var timer = setInterval(function(){
 		timeLeft -= 1;
 		$('#time').text(timeLeft);
@@ -13,6 +13,7 @@ $('document').ready(function(){
 		}
 	}, 1000);
 
+	//function called when the correct song is chosen
 	function win(){
 		$('#answer').text("Correct!");
 		$('#answer').css({color: "green"});
@@ -27,6 +28,8 @@ $('document').ready(function(){
 
 		});
 	}
+
+	//function for incorrect answer
 	function lose(){
 		$('#answer').text("Incorrect!");
 		$('#answer').css({color: "red"});
@@ -42,6 +45,7 @@ $('document').ready(function(){
 		});
 	}
 
+	//each different possible list item and the win/loss function
 	$('#a1').on('click', win);
 	$('#a2').on('click', lose);
 	$('#a3').on('click', lose);
@@ -58,6 +62,25 @@ $('document').ready(function(){
 	$('#d2').on('click', lose);
 	$('#d3').on('click', lose);
 	$('#d4').on('click', win);
+
+
+	//Adds favorite
+	$('#favorite').on('click', function(){
+		$('#favorite').hide();
+		$('#redfav').show();
+		$.ajax({
+			method: 'POST',
+			url: '/quiz/fav',
+			data: {
+				song: $('#cheat').text(),
+				artist: $('#cheatartist').text(),
+				preview: $('#cheatpreview').text(),
+				itunes: $('#cheatitunes').text()
+			}
+		}).done(function(){
+
+		});
+	});
 	
 
 
