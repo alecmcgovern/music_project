@@ -28,40 +28,48 @@
 	</div><!-- /.navbar-collapse -->
 </nav>
 
+<div id="content">
+	<h1 id="un"><%= user.username %></h1>
 
-<h1 id="un"><%= user.username %></h1>
 
-
-<!-- Favorites  -->
-<div id="favorites">
-	<h4>Favorites</h4>
-	<% favs.forEach(function(fav) { %>
-		<div class="divfavorite">
-			<h5 class="title"><%= fav.song_name %> - <%= fav.artist_name %></h5>
-			<audio src="<%= fav.preview_link%>" controls></audio>
-			<% if(currentUser.username===user.username) { %>
-				<form class="pull-right fav-form">
-					<span class="fa fa-heart pull-right redfav fa-2x" data-id="<%= fav.id %>"></span>
-				</form>
-			<% } else { %>
-					<span class="fa fa-heart-o pull-right otherfav fa-2x" data-song="<%= fav.song_name %>"
-					data-artist="<%= fav.artist_name %>"
-					data-preview="<%= fav.preview_link %>"
-					data-itunes="<%= fav.itunes_link %>" 
-					data-userId="<%= fav.userId %>"></span>
-			<% } %>
-			<a class="buttonlink" href="<%= fav.itunes_link %>"><button>Download via iTunes</button></a>
+	<!-- Favorites  -->
+	<div id="favorites">
+		<div id="labelfav">
+			<h4>Favorites</h4>
 		</div>
-	<% }); %>
-</div>
 
-<!-- Stats -->
-<div id="stats">
-	<h4>Stats</h4>
-	<div class="statwell">
-		<h5 class="stat">Correct Ids: <code><%= user.total_ids %></code></h5>
-		<h5 class="stat">Total Games Played: <code><%= user.song_count %></code></h5>
-		<h5 class="stat">Accuracy: <code><%= Math.round((user.total_ids/user.song_count)*100) %>%</code></h5>
+		<div id="listfav">
+		<% favs.forEach(function(fav) { %>
+			<div class="divfavorite">
+				<h5 class="title"><%= fav.song_name %> - <%= fav.artist_name %></h5>
+				<audio src="<%= fav.preview_link%>" controls></audio>
+				<% if(currentUser.username===user.username) { %>
+					<form class="pull-right fav-form">
+						<span class="fa fa-heart pull-right redfav fa-2x" data-id="<%= fav.id %>"></span>
+					</form>
+				<% } else { %>
+						<span class="fa fa-heart-o pull-right otherfav fa-2x" data-song="<%= fav.song_name %>"
+						data-artist="<%= fav.artist_name %>"
+						data-preview="<%= fav.preview_link %>"
+						data-itunes="<%= fav.itunes_link %>" 
+						data-userId="<%= fav.userId %>"></span>
+				<% } %>
+				<a class="buttonlink" href="<%= fav.itunes_link %>"><button>Download via iTunes</button></a>
+			</div>
+		<% }); %>
+		</div>
+	</div>
+
+	<!-- Stats -->
+	<div id="stats">
+		<div id="labelstat">
+			<h4>Stats</h4>
+		</div>
+		<div class="statwell">
+			<h5 class="stat">Correct Ids: <code><%= user.total_ids %></code></h5>
+			<h5 class="stat">Total Games Played: <code><%= user.song_count %></code></h5>
+			<h5 class="stat">Accuracy: <code><%= Math.round((user.total_ids/user.song_count)*100) %>%</code></h5>
+		</div>
 	</div>
 </div>
 <script type="text/javascript" src="/jscript/profile.js"></script>

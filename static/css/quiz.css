@@ -59,10 +59,10 @@ li:hover{
 	padding-right: 30px;
 }
 #favorite:hover{
-	color: red;
+	color: #C7254E;
 }
 #redfav{
-	color: red;
+	color: #C7254E;
 	padding-right: 30px;
 }
 h5{
@@ -72,11 +72,40 @@ h5{
 	top: 600px;
 	text-align: center;
 }
-button{
+#back{
 	margin-top: 10px;
-	position: relative;
 	width: 20%;
 	left: 5%;
+}
+#back:hover{
+	margin-top: 13px;
+}
+#start{
+	width: 60px;
+	margin-top: 10px;
+	background: #2C3F4E;
+	border-bottom: 4px solid black;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	color: white;
+}
+#start:hover{
+	margin-top: 13px;
+	border-bottom: 1px solid black;
+}
+#download{
+	background: #93c5d8;
+	color: black;
+	margin-top: 10px;
+	border-bottom: 4px solid black;
+}
+#download:hover{
+	margin-top: 13px;
+	border-bottom: 1px solid black;
+}
+button{
+	position: relative;
 	background: #2C3F4E;
 	border-bottom: 4px solid black;
 	border-top: none;

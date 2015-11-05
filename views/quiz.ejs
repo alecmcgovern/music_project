@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="/css/quiz.css">
-<a class="buttonlink" href="/profile/<%= currentUser.username %>"><button class="button">Back to <%=currentUser.username %>'s profile</button></a>
+<a class="buttonlink" href="/profile/<%= currentUser.username %>"><button id="back">Back to <%=currentUser.username %>'s profile</button></a>
 <h1>Identify the song as fast as possible</h1>
 <h2>choose a genre</h2>
 
@@ -10,7 +10,7 @@
 		<option value="daft punk">Daft Punk</option>
 		<option value="klartraum">Klartraum</option>
 	</select>
-	<input type="submit" value="Start">
+	<input id="start" type="submit" value="Start">
 </form>
 
 <% if(randomSong){ %>
@@ -98,7 +98,7 @@
 					</li>
 			<%}%>
 		</ul>
-		<a href="<%= randomSong.trackViewUrl %>"><button>Download this song from Itunes</button></a>
+		<a href="<%= randomSong.trackViewUrl %>"><button id="download">Download this song from Itunes</button></a>
 		<p id="answer" class=""></p>
 	</div>
 </div>
