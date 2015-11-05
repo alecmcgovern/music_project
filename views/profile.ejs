@@ -37,6 +37,13 @@
 
 <div id="favorites">
 	<h4>Favorites</h4>
+	<% favs.forEach(function(fav) { %>
+		<div class="divfavorite">
+			<h5><%= fav.song_name %> - <%= fav.artist_name %></h5>
+			<audio src="<%= fav.preview_link%>" controls></audio>
+			<i class="fa fa-heart pull-right redfav fa-2x"></i>
+		</div>
+	<% }); %>
 </div>
 
 <div id="stats">
@@ -45,3 +52,4 @@
 	<h5>Total Games Played: <code><%= user.song_count %></code></h5>
 	<h5>Accuracy: <code><%= Math.round((user.total_ids/user.song_count)*100) %>%</code></h5>
 </div>
+<script type="text/javascript" src="/jscript/profile.js"></script>

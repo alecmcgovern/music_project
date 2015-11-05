@@ -21,6 +21,7 @@
 	margin-left: 20px;
 }
 #favorites{
+	overflow: auto;
 	position: absolute;
 	left: 25%;
 	width: 30%;
@@ -37,4 +38,18 @@
 h4{
 	text-align: center;
 	text-decoration: underline;
+}
+.divfavorite{
+	position: relative;
+	width: 94%;
+	left: 3%;
+	height: 100px;
+	border: 1px solid grey;
+}
+.redfav{
+	color: red;
+	margin-right: 10px;
+}
+.redfav:hover{
+	color: grey;
 }

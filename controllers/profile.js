@@ -16,7 +16,13 @@ router.get('/:username', function(req, res){
 				song_count: user.song_count
 			}
 			if(user){
-				res.render("profile", {user: userinfo});
+				db.favorite.findAll({
+					where: {
+						userId: user.id
+					}
+				}).then(function(favs){
+					res.render("profile", {user: userinfo, favs: favs});
+				});
 			}else{
 				res.render('erruser');
 			}

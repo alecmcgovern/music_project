@@ -42,6 +42,30 @@ router.post('/result', function(req, res){
 	});
 });
 
+router.post('/fav', function(req, res){
+	db.favorite.find({
+		where: {
+			song_name: req.body.song
+		}
+	}).then(function(song){
+		if(song){
+			//do nothing, as the song has already been favorited
+		}else{
+			db.user.findById(req.currentUser.id).then(function(user){
+				user.createFavorite({
+					song_name: req.body.song,
+					artist_name: req.body.artist,
+					preview_link: req.body.preview,
+					itunes_link: req.body.itunes
+			}).then(function(fav){
+				res.send("added");
+		});
+	});
+		}
+	})
+	
+});
+
 router.post('/', function(req, res){
 	res.redirect('/quiz/'+req.body.selector);
 });
