@@ -13,42 +13,51 @@ $('document').ready(function(){
 		}
 	}, 1000);
 
+	var decided = false;
 	//function called when the correct song is chosen
 	function win(){
-		clearInterval(timer);
-		$('#answer').text("Correct!");
-		$('#answer').css({color: "green"});
-		$.ajax({
-			method: 'POST',
-			url: '/quiz/result',
-			data: {
-				answer: true,
-				time: timeLeft
-			}
-		}).done(function(){
-			setTimeout(function(){
-				location.reload();
-			}, 1000);
-		});
+		if(decided===false){
+			decided = true;
+			clearInterval(timer);
+			$('#answer').text("Correct!");
+			$('#answer').css({color: "green"});
+			$.ajax({
+				method: 'POST',
+				url: '/quiz/result',
+				data: {
+					answer: true,
+					time: timeLeft
+				}
+			}).done(function(){
+				setTimeout(function(){
+					decided = false;
+					location.reload();
+				}, 1000);
+			});
+		}
 	}
 
 	//function for incorrect answer
 	function lose(){
-		clearInterval(timer);
-		$('#answer').text("Incorrect!");
-		$('#answer').css({color: "red"});
-		$.ajax({
-			method: 'POST',
-			url: '/quiz/result',
-			data: {
-				answer: false,
-				time: timeLeft
-			}
-		}).done(function(){
-			setTimeout(function(){
-				location.reload();
-			}, 1000);
-		});
+		if(decided===false){
+			decided = true;
+			clearInterval(timer);
+			$('#answer').text("Incorrect!");
+			$('#answer').css({color: "red"});
+			$.ajax({
+				method: 'POST',
+				url: '/quiz/result',
+				data: {
+					answer: false,
+					time: timeLeft
+				}
+			}).done(function(){
+				setTimeout(function(){
+					decided = false;
+					location.reload();
+				}, 1000);
+			});
+		}
 	}
 
 	//each different possible list item and the win/loss function
