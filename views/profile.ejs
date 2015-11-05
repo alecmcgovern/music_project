@@ -35,6 +35,8 @@
 <h1 id="un"><%= user.username %></h1>
 <a id="music" href="/quiz"><button>Take the Quiz!</button></a>
 
+
+<!-- Favorites  -->
 <div id="favorites">
 	<h4>Favorites</h4>
 	<% favs.forEach(function(fav) { %>
@@ -50,12 +52,14 @@
 					data-artist="<%= fav.artist_name %>"
 					data-preview="<%= fav.preview_link %>"
 					data-itunes="<%= fav.itunes_link %>" 
-					data-userId="<%= fav.userId %>"</span>
+					data-userId="<%= fav.userId %>"></span>
 			<% } %>
+			<a href="<%= fav.itunes_link %>"><button>Download via iTunes</button></a>
 		</div>
 	<% }); %>
 </div>
 
+<!-- Stats -->
 <div id="stats">
 	<h4>Stats</h4>
 	<h5>Correct Ids: <code><%= user.total_ids %></code></h5>
