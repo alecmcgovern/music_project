@@ -18,7 +18,7 @@ label{
 #quizdiv{
 	position: absolute;
 	width: 50%;
-	height: 350px;
+	height: 300px;
 	left: 25%;
 	margin-top: 20px;
 	background: #2C3F4E;
@@ -103,8 +103,12 @@ h5{
 	border-bottom: 1px solid black;
 }
 #download{
-	background: #93c5d8;
-	color: black;
+	left: 40%;
+	position: absolute;
+	top: 630px;
+	width: 20%;
+	background: #2C3F4E;
+	color: white;
 	margin-top: 10px;
 	border-bottom: 4px solid black;
 }

@@ -19,6 +19,7 @@ $('document').ready(function(){
 
 	//function called when the correct song is chosen
 	function win(){
+		$('#audio').trigger('pause');
 		if(decided===false){
 			decided = true;
 			clearInterval(timer);
@@ -42,6 +43,7 @@ $('document').ready(function(){
 
 	//function for incorrect answer
 	function lose(){
+		$('#audio').trigger('pause');
 		if(decided===false){
 			decided = true;
 			clearInterval(timer);
