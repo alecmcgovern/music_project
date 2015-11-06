@@ -73,10 +73,18 @@ h5{
 	text-align: center;
 }
 #back{
+	left: 25%;
 	margin-top: 10px;
-	width: 20%;
-	left: 5%;
+	width: 50%;
 }
+@media(min-width: 800px){
+	#back{
+		left: 40%;
+		margin-top: 10px;
+		width: 20%;
+	}
+}
+
 #back:hover{
 	margin-top: 13px;
 }

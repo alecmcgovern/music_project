@@ -2,11 +2,12 @@ var express = require('express');
 var router = express.Router();
 var db = require("../models");
 
-
+// Routes to signup page
 router.get('/', function(req, res){
 	res.render('signup', {extractStyles: true});
 });
 
+// Creates a new user in the user db
 router.post('/', function(req, res){
 	if(req.body.email && req.body.username
 		&& req.body.password && req.body.password2){

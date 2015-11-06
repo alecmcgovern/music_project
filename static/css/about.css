@@ -1,3 +1,4 @@
+/* Navbar stuff */
 .navbar{
 	background: #2C3F4E;
 	border: 2px solid black;
@@ -45,4 +46,7 @@ img{
 }
 #quizlink:hover{
 	text-decoration: none;
+}
+h5{
+	text-align: center;
 }

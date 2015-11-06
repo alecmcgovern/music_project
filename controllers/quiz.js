@@ -3,6 +3,8 @@ var router = express.Router();
 var db = require("../models");
 var request = require("request");
 
+
+//Initial route to quiz page with no music, just a genre choice
 router.get('/', function(req, res){
 	if(req.currentUser) {
 		var songArray = [];
@@ -17,9 +19,16 @@ router.get('/', function(req, res){
 	}
 });
 
+// handles genre choices, and redirects to the quiz of that genre
+router.post('/', function(req, res){
+	res.redirect('/quiz/'+req.body.selector);
+});
+
+// This posts the result from the ajax request after the user
+// makes their song choice
 router.post('/result', function(req, res){
 	db.user.findById(req.currentUser.id).then(function(user){
-		if(!user.song_count){
+		if(!user.song_count){ // updates user song count
 			user.song_count = 1;
 		}else{
 			user.song_count++;
@@ -27,13 +36,13 @@ router.post('/result', function(req, res){
 
 		user.save().then(function(){
 		 	if(req.body.answer==="true"){
-				if(!user.total_ids){
+				if(!user.total_ids){ //updates user's total identified songs
 					user.total_ids = 1;
 				}else{
 					user.total_ids++;
 				}
 			}
-			user.save().then(function(){
+			user.save().then(function(){ //updates user accuracy
 				user.accuracy = Math.round((user.total_ids/user.song_count)*100);
 				user.save().then(function(){
 		 			res.send("done");
@@ -44,6 +53,7 @@ router.post('/result', function(req, res){
 	});
 });
 
+// Route to add favorites when the heart is clicked
 router.post('/fav', function(req, res){
 	db.favorite.find({
 		where: {
@@ -69,15 +79,12 @@ router.post('/fav', function(req, res){
 	
 });
 
-router.post('/', function(req, res){
-	res.redirect('/quiz/'+req.body.selector);
-});
-
+// Route handler once genre has been chosen
 router.get('/:genre', function(req, res){
 	if(req.currentUser) {
 		var genre = req.params.genre;
 		var songArray = [];
-		request(
+		request( // iTunes API request
 			"https://itunes.apple.com/search?term="+genre+"&entity=song",
 			function(err, response, body) {
 				if(!err && response.statusCode === 200){
@@ -102,7 +109,12 @@ router.get('/:genre', function(req, res){
 						songArray[i] = t;
 					}
 
+					// Chooses first song in randomized array
+					// to be the song played
 					var random = songArray[0];
+
+					// Chooses the next 3 songs in the randomized
+					// array to fill the multiple choice slots
 					var filler = {
 						one: songArray[1],
 						two: songArray[2],

@@ -13,7 +13,10 @@ $('document').ready(function(){
 		}
 	}, 1000);
 
+	// var to ensure that two answers can't be chosen
+	// for the same song
 	var decided = false;
+
 	//function called when the correct song is chosen
 	function win(){
 		if(decided===false){

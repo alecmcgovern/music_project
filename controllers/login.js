@@ -6,6 +6,7 @@ router.get('/', function(req, res){
 	res.render('login', {extractStyles: true});
 });
 
+//Authentication
 router.post('/', function(req, res){
 	db.user.authenticate(req.body.email, 
 		req.body.password, function(err, user){
@@ -15,7 +16,7 @@ router.post('/', function(req, res){
 				req.session.user = user.id;
 				res.redirect('/profile/'+user.username);
 			} else {
-				req.flash('danger', 'You goofed. Try again');
+				req.flash('danger', 'incorrect username or password');
 				res.redirect('/login');
 			}
 	});

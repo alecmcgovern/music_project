@@ -1,5 +1,9 @@
 <link rel="stylesheet" type="text/css" href="/css/quiz.css">
+
+<!-- Back to profile button -->
 <a class="buttonlink" href="/profile/<%= currentUser.username %>"><button class="butn" id="back">Back to <%=currentUser.username %>'s profile</button></a>
+
+<!-- Header -->
 <h1>Identify the song as fast as possible</h1>
 <h2>choose a genre</h2>
 
@@ -13,21 +17,36 @@
 	<input id="start" type="submit" value="Start">
 </form>
 
+
+<!-- If a random song is being passed throug, display the following tags -->
 <% if(randomSong){ %>
+
 <div id="quizdiv">
 
+	<!-- Timer -->
 	<div id="timer">Time Remaining: <code id="time"></code></div>
+
+	<!-- Hidden info (for development and favorites) -->
 	<h4 id="cheat" hidden><%= randomSong.trackName %></h4>
 	<h4 id="cheatartist" hidden><%= randomSong.artistName %></h4>
 	<h4 id="cheatpreview" hidden><%= randomSong.previewUrl %></h4>
 	<h4 id="cheatitunes" hidden><%= randomSong.trackViewUrl %></h4>
+
+	<!-- Audio tag -->
 	<audio id="audio" src="<%= randomSong.previewUrl %>" autoplay>
 		</audio>
+
+		<!-- Heart icons to add to favorites -->
 		<i id="favorite" class="fa fa-heart-o pull-right fa-3x"></i>
 		<i id="redfav" class="fa fa-heart pull-right fa-3x" hidden></i>
+
+	<!-- Multiple choice -->
 	<div id="list">
 		<ul>
+			<!-- the "r" variable determines which position the actuall track is being displayed -->
 			<% var r= Math.ceil(Math.random()*4) %>
+
+			<!-- song in spot 1 -->
 			<% if (r===1){ %>
 				<li id="a1">
 					<%= randomSong.trackName %> - 
@@ -45,6 +64,8 @@
 					<%= filler.three.trackName %> - 
 					<%= filler.three.artistName %>
 					</li>
+
+			<!-- song in spot 2 -->
 			<% } else if (r===2) { %>
 				<li id="b1">
 					<%= filler.one.trackName %> - 
@@ -62,6 +83,8 @@
 					<%= filler.three.trackName %> - 
 					<%= filler.three.artistName %>
 					</li>
+
+			<!-- song in spot 3 -->
 			<% } else if (r===3) { %>
 				<li id="c1">
 					<%= filler.one.trackName %> - 
@@ -79,6 +102,8 @@
 					<%= filler.three.trackName %> - 
 					<%= filler.three.artistName %>
 					</li>
+
+			<!-- song in spot 4 -->
 			<% } else if (r===4) { %>
 				<li id="d1">
 					<%= filler.one.trackName %> - 
@@ -98,10 +123,15 @@
 					</li>
 			<%}%>
 		</ul>
+
+		<!-- iTunes link -->
 		<a href="<%= randomSong.trackViewUrl %>"><button id="download" class="butn">Download this song from Itunes</button></a>
-		<p id="answer" class=""></p>
 	</div>
 </div>
+
+<!-- sell your soul to apple! -->
 <h5>All music clips courtesy of iTunes</h5>
+
+<!-- close the quiz box -->
 <% } %>
 <script type="text/javascript" src="/jscript/quiz.js"></script>

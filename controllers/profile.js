@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require("../models");
 
+//Route to any given user profile
 router.get('/:username', function(req, res){
 	if(req.currentUser) {
 		db.user.find({
@@ -9,13 +10,13 @@ router.get('/:username', function(req, res){
 				username: req.params.username
 			}
 		}).then(function(user){
-			var userinfo = {
+			var userinfo = {  //object with user info
 				username: user.username,
 				accuracy: user.accuracy,
 				total_ids: user.total_ids,
 				song_count: user.song_count
 			}
-			if(user){
+			if(user){  // finds all favorites of the given user
 				db.favorite.findAll({
 					where: {
 						userId: user.id
@@ -33,6 +34,7 @@ router.get('/:username', function(req, res){
 	}
 });
 
+// Delete favorites route
 router.post('/nofav', function(req, res){
 	db.favorite.findById(req.body.id).then(function(fav){
 		fav.destroy().then(function(f){
@@ -41,7 +43,7 @@ router.post('/nofav', function(req, res){
 	})
 });
 
-
+//add favorites route (from another user's profile)
 router.post('/fav', function(req, res){
 	db.favorite.findOrCreate({
 		where: {
