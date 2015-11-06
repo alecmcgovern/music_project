@@ -18,7 +18,10 @@ router.post('/', function(req, res){
 				},
 				defaults: {
 					username: req.body.username,
-					password: req.body.password
+					password: req.body.password,
+					accuracy: 0,
+					total_ids: 0,
+					song_count: 0
 				}
 			}).spread(function(user, created){
 				if(created){
