@@ -1,0 +1,45 @@
+.navbar{
+	/*background: #2C3F4E;*/
+	background: black;
+	border-bottom: 2px solid white;
+	border-radius: 0px;
+	margin-bottom: 0px;
+}
+#about{
+	color: white;
+}
+#leaderboard{
+	color: white;
+}
+#username{
+	color: white;
+}
+#logout{
+	color: white;
+}
+
+h1{
+	padding-top: 30px;
+	margin-top: 0px;
+	text-align: center;
+}
+img{
+	margin: 0px;
+	padding: 0px;
+	height: 100px;
+	position: relative;
+	width: 50%;
+	left: 25%;
+}
+#quizlink{
+	text-align: center;
+	color: white;
+}
+#quizheader{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+#quizlink:hover{
+	text-decoration: none;
+}
