@@ -85,7 +85,7 @@ router.get('/:genre', function(req, res){
 		var genre = req.params.genre;
 		var songArray = [];
 		request( // iTunes API request
-			"https://itunes.apple.com/search?term="+genre+"&entity=song",
+			"https://itunes.apple.com/search?term="+genre+"&limit=200&entity=song",
 			function(err, response, body) {
 				if(!err && response.statusCode === 200){
 					var data = JSON.parse(body);

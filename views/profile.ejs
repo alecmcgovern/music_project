@@ -1,37 +1,27 @@
 <link rel="stylesheet" type="text/css" href="/css/profile.css">
-<nav class="navbar navbar-default" role="navigation">
-	<a href="/quiz"><img src="/images/soundwave.png"></a>
-	<h1 id="quizheader"><a id="quizlink" href="/quiz"><i class="fa fa-music"></i> Quiz Me <i class="fa fa-music"></i></a></h1>
-	<!-- Brand and toggle get grouped for better mobile display -->
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-	</div>
 
-	<!-- Collect the nav links, forms, and other content for toggling -->
-	<div class="collapse navbar-collapse navbar-ex1-collapse">
-		<ul class="nav navbar-nav">
-			<li><a id="about" href="/about">About</a></li>
-			<li><a id="leaderboard" href="/leaderboard">Leaderboard</a></li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<% if (currentUser) { %>
-			<li><a id="username" href="/profile/<%= currentUser.username %>"><%= currentUser.username %></a></li>
-			<% } %>
-			<li><a id="logout" href="/logout">Logout</a></li>
-		</ul>
-	</div><!-- /.navbar-collapse -->
-</nav>
+<% include partials/header.ejs %>
+
 
 <div id="content">
 	<h1 id="un"><%= user.username %></h1>
 
 
 	<!-- Favorites  -->
+	
+
+	<!-- Stats -->
+	<div id="stats">
+		<div id="labelstat">
+			<h4>Stats</h4>
+		</div>
+		<div class="statwell">
+			<h5 class="stat">Correct Ids: <code><%= user.total_ids %></code></h5>
+			<h5 class="stat">Total Games Played: <code><%= user.song_count %></code></h5>
+			<h5 class="stat">Accuracy: <code><%= user.accuracy %>%</code></h5>
+		</div>
+	</div>
+
 	<div id="favorites">
 		<div id="labelfav">
 			<h4>Favorites</h4>
@@ -54,21 +44,8 @@
 						data-userId="<%= fav.userId %>"></span>
 				<% } %>
 				<a class="buttonlink" href="<%= fav.itunes_link %>"><button class="butn">Download via iTunes</button></a>
-				<p id="answer"></p>
 			</div>
 		<% }); %>
-		</div>
-	</div>
-
-	<!-- Stats -->
-	<div id="stats">
-		<div id="labelstat">
-			<h4>Stats</h4>
-		</div>
-		<div class="statwell">
-			<h5 class="stat">Correct Ids: <code><%= user.total_ids %></code></h5>
-			<h5 class="stat">Total Games Played: <code><%= user.song_count %></code></h5>
-			<h5 class="stat">Accuracy: <code><%= user.accuracy %>%</code></h5>
 		</div>
 	</div>
 </div>

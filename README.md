@@ -18,6 +18,8 @@ font-awesome
 Some additional styling in Bootstrap.
 
 
+Images from: http://all-free-download.com/free-vector/
+
 Known bugs:  
 Has not been thoroughly tested outside of chrome.  Try not to be overwhelmed by the incredible design and styling.
 

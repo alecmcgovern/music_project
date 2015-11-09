@@ -17,11 +17,7 @@
 #logout{
 	color: white;
 }
-#content{
-	width: 100%;
-	height: 800px;
-	background: #ced7e5;
-}
+
 h1{
 	padding-top: 30px;
 	margin-top: 0px;
@@ -53,13 +49,15 @@ img{
 #content{
 	width: 100%;
 	height: 1600px;
-	background: #ced7e5;
+	background-image: url('../images/Digital_Sound_Background.jpg');
+	background-color: #cccccc;
 }
 #un{
 	margin-top: 0px;
 	padding-top: 30px;
 	padding-bottom: 30px;
 	text-align: center;
+	color: white;
 }
 #music{
 	margin-left: 20px;
@@ -79,49 +77,41 @@ img{
 	overflow: auto;
 }
 #favorites{
-	position: absolute;
-	left: 15%;
-	width: 70%;
-	height: 500px;
-	border: 3px solid black;
-	background: #2C3F4E;
-}
-#stats{
 	position: relative;
 	top: 600px;
 	left: 15%;
 	width: 70%;
 	height: 500px;
-	border: 3px solid black;
-	background: #2C3F4E;
+	border: 3px solid white;
+	background: black;
+
+}
+#stats{
+	position: absolute;
+	left: 15%;
+	width: 70%;
+	height: 500px;
+	border: 3px solid white;
+	background: black;
 }
 @media(min-width: 800px){
 	#content{
-		width: 100%;
 		height: 800px;
-		background: #ced7e5;
 	}
 }
 @media(min-width: 800px){
 	#favorites{
-		position: absolute;
-		left: 12%;
+		top: 0px;
+		left: 52%;
 		width: 36%;
-		height: 500px;
-		border: 3px solid black;
-		background: #2C3F4E;
+		
 	}
 }
 
 @media(min-width: 800px){
 	#stats{
-		position: relative;
-		top: 0px;
-		left: 52%;
+		left: 12%;
 		width: 36%;
-		height: 500px;
-		border: 3px solid black;
-		background: #2C3F4E;
 	}
 }
 
@@ -130,7 +120,7 @@ img{
 	width: 100%;
 	height: 40px;
 	border-bottom: 4px solid black;
-	background: #C7254E;
+	background: #C10C01;
 }
 
 .stat{
@@ -139,7 +129,7 @@ img{
 .statwell{
 	margin-top: 10px;
 	border: 1px solid black;
-	background: #93c5d8;
+	background: #f9453b;
 	position: relative;
 	width: 94%;
 	left: 3%;
@@ -160,7 +150,7 @@ h4{
 	border: 1px solid grey;
 	margin-bottom: 10px;
 	margin-top: 10px;
-	background: #93c5d8;
+	background: #0299BE;
 }
 .title{
 	text-align: center;
@@ -193,14 +183,17 @@ audio{
 	color: white; 
 }
 .redfav{
-	color: #C7254E;
+	color: #C10C01;
 	margin-right: 10px;
 }
 .redfav:hover{
 	color: grey;
 }
 .otherfav{
-	color: #C7254E;
+	color: #C10C01;
 	margin-right: 10px;
+}
+code{
+	color: #C10C01;
 }
 

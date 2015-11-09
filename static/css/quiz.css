@@ -10,11 +10,13 @@ h2{
 }
 form{
 	text-align: center;
+	padding-bottom: 10px;
 }
 label{
 	margin-left: 20px;
 	margin-right: 5px;
 }
+
 #quizdiv{
 	position: absolute;
 	width: 50%;
