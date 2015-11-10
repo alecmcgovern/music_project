@@ -1,4 +1,8 @@
-
+body{
+	background-image: url('../images/Wired_motion.jpg');
+	font-family: 'Sumana';
+	color: white;
+}
 h5{
 	text-align: center;
 }

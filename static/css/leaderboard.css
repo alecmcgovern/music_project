@@ -5,6 +5,7 @@
 	height: 800px;
 	background-image: url('../images/Wired_motion.jpg');
 	background-size: 100%;
+	font-family: 'Sumana';
 }
 #resultslist{
 	overflow: auto;

@@ -2,7 +2,7 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #2C3F4E;
+	background: black;
 }
 #soundwave{
 	position: absolute;
@@ -11,6 +11,7 @@
 
 }
 #signupdiv{
+	font-family: 'Sumana';
 	width: 70%;
 	left: 15%;
 	position: absolute;
@@ -23,19 +24,13 @@
 	#signupdiv{
 		position: absolute;
 		width: 40%;
-		height: 400px;
 		left: 30%;
-		top: 18%;
-		background: rgba(239, 239, 239, 0.6);
-		border-radius: 4px;
 	}
 }
 #email-signup{
 	position: relative;
 	width: 70%;
 	left: 15%;
-	padding-top: 10px;
-	padding-bottom: 10px;
 	padding-left: 10px;
 	margin-top: 30px;
 	margin-bottom: 20px;
@@ -44,27 +39,21 @@
 	position: relative;
 	width: 70%;
 	left: 15%;
-	padding-top: 10px;
 	padding-left: 10px;
-	padding-bottom: 10px;
 	margin-bottom: 20px;
 }
 #password1-signup{
 	position: relative;
 	width: 70%;
 	left: 15%;
-	padding-top: 10px;
 	padding-left: 10px;
-	padding-bottom: 10px;
 	margin-bottom: 20px;
 }
 #password2-signup{
 	position: relative;
 	width: 70%;
 	left: 15%;
-	padding-top: 10px;
 	padding-left: 10px;
-	padding-bottom: 10px;
 	margin-bottom: 20px;
 }
 #submit-signup{

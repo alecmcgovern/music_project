@@ -9,6 +9,11 @@ router.get('/', function(req, res){
 
 // Creates a new user in the user db
 router.post('/', function(req, res){
+	if(req.body.username.length > 12 || 
+		req.body.username.length < 4 ){
+		req.flash("danger", "username must be between 4 and 12 characters");
+		res.redirect("/signup");
+	}
 	if(req.body.email && req.body.username
 		&& req.body.password && req.body.password2){
 		if(req.body.password===req.body.password2){

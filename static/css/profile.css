@@ -4,6 +4,7 @@
 	height: 1600px;
 	background-image: url('../images/Digital_Sound_Background.jpg');
 	background-color: #cccccc;
+	font-family: 'Sumana';
 }
 #un{
 	margin-top: 0px;
@@ -80,10 +81,10 @@
 	margin-left: 10px;
 }
 .statwell{
-	background: -webkit-linear-gradient(red, #547996); /* For Safari 5.1 to 6.0 */
-  	background: -o-linear-gradient(red, #547996); /* For Opera 11.1 to 12.0 */
-  	background: -moz-linear-gradient(red, #547996); /* For Firefox 3.6 to 15 */
-  	background: linear-gradient(red, #547996);
+	background: -webkit-linear-gradient(#2C3F4E, #547996); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(#2C3F4E, #547996); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(#2C3F4E, #547996); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(#2C3F4E, #547996);
 	color: white;
 	margin-top: 10px;
 	border: 1px solid black;
@@ -97,7 +98,6 @@ h4{
 	padding-top: 10px;
 	margin-top: 0px;
 	text-align: center;
-	text-decoration: underline;
 	color: white;
 }
 .divfavorite{
@@ -105,10 +105,13 @@ h4{
 	width: 94%;
 	left: 3%;
 	height: 130px;
-	border: 1px solid grey;
+	border: 1px solid black;
 	margin-bottom: 10px;
 	margin-top: 10px;
-	background: #0299BE;
+	background: -webkit-linear-gradient(#004F8C, #547996); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(#004F8C, #547996); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(#004F8C, #547996); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(#004F8C, #547996);
 }
 .title{
 	text-align: center;
