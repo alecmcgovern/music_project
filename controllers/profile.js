@@ -4,34 +4,45 @@ var db = require("../models");
 
 //Route to any given user profile
 router.get('/:username', function(req, res){
-	if(req.currentUser) {
-		db.user.find({
-			where: {
-				username: req.params.username
-			}
-		}).then(function(user){
-			var userinfo = {  //object with user info
-				username: user.username,
-				accuracy: user.accuracy,
-				total_ids: user.total_ids,
-				song_count: user.song_count
-			}
-			if(user){  // finds all favorites of the given user
-				db.favorite.findAll({
+	db.user.find({
+		where: {
+			username: req.params.username
+		}
+	}).then(function(u){
+		if(u){
+			if(req.currentUser) {
+				db.user.find({
 					where: {
-						userId: user.id
+						username: req.params.username
 					}
-				}).then(function(favs){
-					res.render("profile", {user: userinfo, favs: favs});
-				});
-			}else{
-				res.render('erruser');
+				}).then(function(user){
+					var userinfo = {  //object with user info
+						username: user.username,
+						accuracy: user.accuracy,
+						total_ids: user.total_ids,
+						song_count: user.song_count
+					}
+					if(user){  // finds all favorites of the given user
+						db.favorite.findAll({
+							where: {
+								userId: user.id
+							}
+						}).then(function(favs){
+							res.render("profile", {user: userinfo, favs: favs});
+						});
+					}else{
+						res.render('erruser');
+					}
+				})
+			} else {
+				req.flash('danger', 'Please login to access this page');
+				res.redirect('/login');
 			}
-		})
-	} else {
-		req.flash('danger', 'Please login to access this page');
-		res.redirect('/login');
-	}
+		}else{
+			res.render("erruser");
+		}
+	})
+		
 });
 
 // Delete favorites route
