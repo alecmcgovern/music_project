@@ -37,6 +37,9 @@ router.post('/', function(req, res){
 					req.flash("danger", "Email already in use");
 					res.redirect("/signup");
 				}
+			}).catch(function(err){
+				req.flash("danger", "Error "+ err.message);
+				res.redirect("/signup");
 			});
 		}else{
 			req.flash('danger', "Passwords did not match.  Please try again");
