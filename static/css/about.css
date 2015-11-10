@@ -1,7 +1,14 @@
 body{
-	background-image: url('../images/Wired_motion.jpg');
+	background: black;
 	font-family: 'Sumana';
 	color: white;
+}
+#content{
+	width: 100%;
+	height: 1600px;
+	background-image: url('../images/Wired_motion.jpg');
+	background-color: #cccccc;
+	font-family: 'Sumana';
 }
 h5{
 	text-align: center;

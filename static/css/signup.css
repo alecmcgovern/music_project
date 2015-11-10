@@ -1,3 +1,6 @@
+body{
+	background: black;
+}
 #signup-body{
 	position: absolute;
 	width: 100%;

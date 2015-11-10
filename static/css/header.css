@@ -3,6 +3,9 @@
 	/*background: #2C3F4E;*/
 	background: black;
 	border-bottom: 2px solid white;
+	border-left: 0px;
+	border-top: 0px;
+	border-right: 0px;
 	border-radius: 0px;
 	margin-bottom: 0px;
 }

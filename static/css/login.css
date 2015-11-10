@@ -1,3 +1,6 @@
+body{
+	background: black;
+}
 #login-body{
 	position: absolute;
 	width: 100%;
