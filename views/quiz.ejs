@@ -1,20 +1,18 @@
 <link rel="stylesheet" type="text/css" href="/css/quiz.css">
 
+<% include partials/header.ejs %>
 <!-- Back to profile button -->
-<a class="buttonlink" href="/profile/<%= currentUser.username %>"><button class="butn" id="back">Back to <%=currentUser.username %>'s profile</button></a>
+<!-- <a class="buttonlink" href="/profile/<%= currentUser.username %>"><button class="butn" id="back">Back to <%=currentUser.username %>'s profile</button></a> -->
 
 <!-- Header -->
 <h1>Identify the song as fast as possible</h1>
-<h2>choose a genre</h2>
+<h2>choose a genre:</h2>
 
 <form action="/quiz/" method="POST">
 	<select name="selector">
 		<option value="pop">Pop</option>
-		<option value="electronic">Electronic</option>
 		<option value="daft punk">Daft Punk</option>
 		<option value="folk">Folk</option>
-		<option value="santana">Santana (hi dad)</option>
-		<option value="james taylor">James Taylor (hi mom)</option>
 	</select>
 	<input id="start" type="submit" value="Start">
 </form>
