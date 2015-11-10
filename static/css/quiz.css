@@ -1,5 +1,5 @@
 body{
-	background: #93c5d8;
+	background-image: url();
 	font-family: 'Sumana';
 }
 h1{
@@ -62,18 +62,23 @@ li:hover{
 	padding-right: 30px;
 }
 #favorite:hover{
-	color: #C7254E;
+	color: #C10C01;
 }
 #redfav{
-	color: #C7254E;
+	color: #C10C01;
 	padding-right: 30px;
 }
 h5{
 	width: 50%;
 	left: 25%;
 	position: absolute;
-	top: 600px;
+	top: 900px;
 	text-align: center;
+}
+@media(min-width: 600px){
+	h5{
+		top: 800px;
+	}
 }
 #back{
 	left: 25%;
@@ -106,10 +111,11 @@ h5{
 	border-bottom: 1px solid black;
 }
 #download{
-	left: 40%;
+	width: 50%;
+	left: 25%;
 	position: absolute;
-	top: 630px;
-	width: 20%;
+	top: 850px;
+	
 	background: #2C3F4E;
 	color: white;
 	margin-top: 10px;
@@ -119,6 +125,14 @@ h5{
 	margin-top: 13px;
 	border-bottom: 1px solid black;
 }
+@media(min-width: 600px){
+	#download{
+		top: 750px;
+		left: 40%;
+		width: 20%;
+	}
+}
+
 .butn{
 	position: relative;
 	background: #2C3F4E;
