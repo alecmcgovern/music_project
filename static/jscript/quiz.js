@@ -1,6 +1,5 @@
 $('document').ready(function(){
 
-
 	//Tracks the time
 	var timeLeft = 30;
 	$('#time').text(timeLeft);

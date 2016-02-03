@@ -98,7 +98,7 @@ router.get('/:genre', function(req, res){
 						songinfo.trackViewUrl = song.trackViewUrl;
 						songArray.push(songinfo);
 					});
-
+					
 					//Fisher-Yates Shuffle -- source: http://bost.ocks.org/mike/shuffle/
 					var m = songArray.length, t, i;
 					while(m) {
